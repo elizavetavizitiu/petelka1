@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Петелька — уютный сайт о вязании: схемы, полезные инструменты и вдохновение." name="description"/>
+  <title>
+   Помощник — Петелька
+  </title>
+  <link href="css/style.css" rel="stylesheet"/>
+  <script defer="" src="js/main.js">
+  </script>
+ </head>
+ <body>
+  <header class="site-header">
+   <div class="container site-header__inner">
+    <a class="site-header__brand" href="index.html">
+     <img alt="Клубок со спицами" class="site-header__logo-img" src="images/logo.svg"/>
+     <span>
+      Петелька
+     </span>
+    </a>
+    <nav aria-label="Основная навигация" class="site-header__nav">
+     <a class="site-header__link" href="index.html">
+      Главная
+     </a>
+     <a class="site-header__link" href="catalog.html">
+      Каталог
+     </a>
+     <a class="site-header__link is-active" href="helper.html">
+      Помощник
+     </a>
+     <a class="site-header__link" href="about.html">
+      О проекте
+     </a>
+    </nav>
+   </div>
+  </header>
+  <main>
+   <section class="page-banner">
+    <div class="container">
+     <span class="eyebrow">
+      Полезные инструменты
+     </span>
+     <h1>
+      Помощник вязальщицы
+     </h1>
+     <p>
+      Считай ряды и рассчитывай петли без блокнота и калькулятора.
+     </p>
+    </div>
+   </section>
+   <section class="section container">
+    <div class="tool-grid">
+     <section class="tool-card">
+      <h2>
+       Счётчик рядов
+      </h2>
+      <p>
+       Укажи цель и отмечай каждый провязанный ряд.
+      </p>
+      <label class="field">
+       Всего рядов в изделии
+       <input id="rowGoal" max="100000" min="1" type="number" value="100"/>
+      </label>
+      <div aria-live="polite" class="counter-number" id="rowCount">
+       0
+      </div>
+      <div class="counter-controls">
+       <button aria-label="Уменьшить количество рядов" class="button button--outline" id="minusRow" type="button">
+        −
+       </button>
+       <button aria-label="Увеличить количество рядов" class="button" id="plusRow" type="button">
+        + Добавить ряд
+       </button>
+      </div>
+      <div class="progress-track">
+       <div class="progress-fill" id="rowProgress">
+       </div>
+      </div>
+      <p class="progress-label" id="progressText">
+       0% выполнено
+      </p>
+      <button class="text-button" id="resetRows" type="button">
+       Сбросить счётчик
+      </button>
+     </section>
+     <section class="tool-card">
+      <div class="tool-card__icon">
+       ⌁
+      </div>
+      <h2>
+       Калькулятор петель
+      </h2>
+      <p>
+       Свяжи образец, измерь его и узнай, сколько петель нужно набрать.
+      </p>
+      <form id="stitchForm">
+       <label class="field">
+        Петель в образце
+        <input id="sampleStitches" min="1" required="" step="1" type="number" value="20"/>
+       </label>
+       <label class="field">
+        Ширина образца (см)
+        <input id="sampleWidth" min="0.1" required="" step="0.1" type="number" value="10"/>
+       </label>
+       <label class="field">
+        Нужная ширина изделия (см)
+        <input id="targetWidth" min="0.1" required="" step="0.1" type="number" value="45"/>
+       </label>
+       <button class="button" type="submit">
+        Рассчитать →
+       </button>
+      </form>
+      <div aria-live="polite" class="calculation-result" id="stitchResult">
+       Введите параметры и нажмите «Рассчитать».
+      </div>
+      <p class="note">
+       Результат округляется до целого числа. Для резинки или узора может понадобиться скорректировать число петель.
+      </p>
+     </section>
+    </div>
+   </section>
+  </main>
+  <footer class="site-footer">
+   <div class="container site-footer__inner">
+    <div>
+     <a class="site-footer__wordmark" href="index.html">
+      Петелька
+     </a>
+     <p>
+      Вяжем с теплом и вдохновением.
+     </p>
+    </div>
+    <div class="site-footer__links">
+     <a href="index.html">
+      Главная
+     </a>
+     <a href="catalog.html">
+      Каталог
+     </a>
+     <a href="helper.html">
+      Помощник
+     </a>
+     <a href="about.html">
+      О проекте
+     </a>
+    </div>
+    <div class="site-footer__copyright">
+     © 2026 Петелька
+     <br/>
+     Все права защищены
+    </div>
+   </div>
+  </footer>
+  <button aria-label="Вернуться наверх" class="to-top" id="toTop" type="button">
+   ⌃
+  </button>
+ </body>
+</html>

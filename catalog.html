@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ru">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Петелька — уютный сайт о вязании: схемы, полезные инструменты и вдохновение." name="description"/>
+  <title>
+   Каталог — Петелька
+  </title>
+  <link href="css/style.css" rel="stylesheet"/>
+  <script defer="" src="js/products.js">
+  </script>
+  <script defer="" src="js/main.js">
+  </script>
+ </head>
+ <body>
+  <header class="site-header">
+   <div class="container site-header__inner">
+    <a class="site-header__brand" href="index.html">
+     <img alt="Клубок со спицами" class="site-header__logo-img" src="images/logo.svg"/>
+     <span>
+      Петелька
+     </span>
+    </a>
+    <nav aria-label="Основная навигация" class="site-header__nav">
+     <a class="site-header__link" href="index.html">
+      Главная
+     </a>
+     <a class="site-header__link is-active" href="catalog.html">
+      Каталог
+     </a>
+     <a class="site-header__link" href="helper.html">
+      Помощник
+     </a>
+     <a class="site-header__link" href="about.html">
+      О проекте
+     </a>
+    </nav>
+   </div>
+  </header>
+  <main>
+   <section class="page-banner">
+    <div class="container">
+     <span class="eyebrow">
+      Твоя коллекция идей
+     </span>
+     <h1>
+      Каталог схем
+     </h1>
+     <p>
+      Девять уютных проектов — от первого шарфа до любимого кардигана.
+     </p>
+    </div>
+   </section>
+   <section class="section container">
+    <div class="filters">
+     <label>
+      Поиск
+      <input id="search" placeholder="Название изделия…" type="search"/>
+     </label>
+     <label>
+      Категория
+      <select id="category">
+       <option value="">
+        Все категории
+       </option>
+       <option>
+        Одежда
+       </option>
+       <option>
+        Аксессуары
+       </option>
+       <option>
+        Головные уборы
+       </option>
+      </select>
+     </label>
+     <label>
+      Сложность
+      <select id="level">
+       <option value="">
+        Любая сложность
+       </option>
+       <option>
+        Начальный
+       </option>
+       <option>
+        Средний
+       </option>
+       <option>
+        Продвинутый
+       </option>
+      </select>
+     </label>
+     <button class="button button--outline button--filter" id="resetFilters" type="button">
+      Сбросить
+     </button>
+    </div>
+    <p aria-live="polite" class="results-count" id="resultsCount">
+    </p>
+    <div class="cards" id="catalogCards">
+     <article class="product-card" data-category="Аксессуары" data-level="Начальный" data-search="шарф «тёплый вечер» мягкий шарф платочной вязкой — отличный первый проект.">
+      <img alt="Шарф «Тёплый вечер»" loading="lazy" src="images/scarf.svg"/>
+      <div class="product-card__content">
+       <div class="product-card__tags">
+        <span>
+         Аксессуары
+        </span>
+        <span>
+         Начальный
+        </span>
+       </div>
+       <h2>
+        Шарф «Тёплый вечер»
+       </h2>
+       <p>
+        Мягкий шарф платочной вязкой — отличный первый проект.
+       </p>
+       <a class="button button--small" href="catalog.html?item=scarf">
+        Подробнее 
+       </a>
+      </div>
+     </article>
+     <article class="product-card" data-category="Головные уборы" data-level="Средний" data-search="шапка «облако» уютная шапка с широкой резинкой и аккуратной макушкой.">
+      <img alt="Шапка «Облако»" loading="lazy" src="images/hat.svg"/>
+      <div class="product-card__content">
+       <div class="product-card__tags">
+        <span>
+         Головные уборы
+        </span>
+        <span>
+         Средний
+        </span>
+       </div>
+       <h2>
+        Шапка «Облако»
+       </h2>
+       <p>
+        Уютная шапка с широкой резинкой и аккуратной макушкой.
+       </p>
+       <a class="button button--small" href="catalog.html?item=hat">
+        Подробнее 
+       </a>
+      </div>
+     </article>
+     <article class="product-card" data-category="Одежда" data-level="Продвинутый" data-search="свитер «нежность» свободный свитер с мягкими линиями и простым узором.">
+      <img alt="Свитер «Нежность»" loading="lazy" src="images/sweater.svg"/>
+      <div class="product-card__content">
+       <div class="product-card__tags">
+        <span>
+         Одежда
+        </span>
+        <span>
+         Продвинутый
+        </span>
+       </div>
+       <h2>
+        Свитер «Нежность»
+       </h2>
+       <p>
+        Свободный свитер с мягкими линиями и простым узором.
+       </p>
+       <a class="button button--small" href="catalog.html?item=sweater">
+        Подробнее 
+       </a>
+      </div>
+     </article>
+     <article class="product-card" data-category="Аксессуары" data-level="Средний" data-search="варежки «снежинка» тёплые варежки для зимних прогулок.">
+      <img alt="Варежки «Снежинка»" loading="lazy" src="images/mittens.svg"/>
+      <div class="product-card__content">
+       <div class="product-card__tags">
+        <span>
+         Аксессуары
+        </span>
+        <span>
+         Средний
+        </span>
+       </div>
+       <h2>
+        Варежки «Снежинка»
+       </h2>
+       <p>
+        Тёплые варежки для зимних прогулок.
+       </p>
+       <a class="button button--small" href="catalog.html?item=mittens">
+        Подробнее 
+       </a>
+      </div>
+     </article>
+     <article class="product-card" data-category="Одежда" data-level="Продвинутый" data-search="кардиган «уют» кардиган на каждый день с открытым передом.">
+      <img alt="Кардиган «Уют»" loading="lazy" src="images/cardigan.svg"/>
+      <div class="product-card__content">
+       <div class="product-card__tags">
+        <span>
+         Одежда
+        </span>
+        <span>
+         Продвинутый
+        </span>
+       </div>
+       <h2>
+        Кардиган «Уют»
+       </h2>
+       <p>
+        Кардиган на каждый день с открытым передом.
+       </p>
+       <a class="button button--small" href="catalog.html?item=cardigan">
+        Подробнее 
+       </a>
+      </div>
+     </article>
+     <article class="product-card" data-category="Аксессуары" data-level="Средний" data-search="носки «домашние» мягкие носочки для прохладных вечеров.">
+      <img alt="Носки «Домашние»" loading="lazy" src="images/socks.svg"/>
+      <div class="product-card__content">
+       <div class="product-card__tags">
+        <span>
+         Аксессуары
+        </span>
+        <span>
+         Средний
+        </span>
+       </div>
+       <h2>
+        Носки «Домашние»
+       </h2>
+       <p>
+        Мягкие носочки для прохладных вечеров.
+       </p>
+       <a class="button button--small" href="catalog.html?item=socks">
+        Подробнее 
+       </a>
+      </div>
+     </article>
+     <article class="product-card" data-category="Одежда" data-level="Начальный" data-search="топ «лето» лёгкий хлопковый топ для тёплых дней.">
+      <img alt="Топ «Лето»" loading="lazy" src="images/top.svg"/>
+      <div class="product-card__content">
+       <div class="product-card__tags">
+        <span>
+         Одежда
+        </span>
+        <span>
+         Начальный
+        </span>
+       </div>
+       <h2>
+        Топ «Лето»
+       </h2>
+       <p>
+        Лёгкий хлопковый топ для тёплых дней.
+       </p>
+       <a class="button button--small" href="catalog.html?item=top">
+        Подробнее 
+       </a>
+      </div>
+     </article>
+     <article class="product-card" data-category="Головные уборы" data-level="Начальный" data-search="повязка «косичка» быстрый проект для знакомства с вязанием.">
+      <img alt="Повязка «Косичка»" loading="lazy" src="images/headband.svg"/>
+      <div class="product-card__content">
+       <div class="product-card__tags">
+        <span>
+         Головные уборы
+        </span>
+        <span>
+         Начальный
+        </span>
+       </div>
+       <h2>
+        Повязка «Косичка»
+       </h2>
+       <p>
+        Быстрый проект для знакомства с вязанием.
+       </p>
+       <a class="button button--small" href="catalog.html?item=headband">
+        Подробнее 
+       </a>
+      </div>
+     </article>
+     <article class="product-card" data-category="Аксессуары" data-level="Начальный" data-search="сумка «петелька» небольшая вязаная сумка для любимых мелочей.">
+      <img alt="Сумка «Петелька»" loading="lazy" src="images/bag.svg"/>
+      <div class="product-card__content">
+       <div class="product-card__tags">
+        <span>
+         Аксессуары
+        </span>
+        <span>
+         Начальный
+        </span>
+       </div>
+       <h2>
+        Сумка «Петелька»
+       </h2>
+       <p>
+        Небольшая вязаная сумка для любимых мелочей.
+       </p>
+       <a class="button button--small" href="catalog.html?item=bag">
+        Подробнее 
+       </a>
+      </div>
+     </article>
+    </div>
+    <p class="empty-state" hidden="" id="emptyState">
+     По вашему запросу ничего не найдено. Попробуйте изменить фильтры.
+    </p>
+   </section>
+   <dialog aria-labelledby="dialogTitle" class="product-dialog" id="productDialog">
+    <button aria-label="Закрыть" class="product-dialog__close" id="closeDialog" type="button">
+     ×
+    </button>
+    <div class="product-dialog__inner">
+     <img alt="" id="dialogImage" src="images/scarf.svg"/>
+     <div>
+      <span class="eyebrow" id="dialogMeta">
+      </span>
+      <h2 id="dialogTitle">
+      </h2>
+      <p id="dialogDesc">
+      </p>
+      <h3>
+       Как связать
+      </h3>
+      <p id="dialogInstructions">
+      </p>
+      <p class="note">
+       Это краткое учебное описание проекта. Для вязания изделия под свои размеры обязательно свяжите образец и проверьте плотность.
+      </p>
+      <a class="button button--small" href="helper.html">
+       Рассчитать петли 
+      </a>
+     </div>
+    </div>
+   </dialog>
+  </main>
+  <footer class="site-footer">
+   <div class="container site-footer__inner">
+    <div>
+     <a class="site-footer__wordmark" href="index.html">
+      Петелька
+     </a>
+     <p>
+      Вяжем с теплом и вдохновением.
+     </p>
+    </div>
+    <div class="site-footer__links">
+     <a href="index.html">
+      Главная
+     </a>
+     <a href="catalog.html">
+      Каталог
+     </a>
+     <a href="helper.html">
+      Помощник
+     </a>
+     <a href="about.html">
+      О проекте
+     </a>
+    </div>
+    <div class="site-footer__copyright">
+     © 2026 Петелька
+     <br/>
+     Все права защищены
+    </div>
+   </div>
+  </footer>
+  <button aria-label="Вернуться наверх" class="to-top" id="toTop" type="button">
+   ⌃
+  </button>
+ </body>
+</html>
