@@ -1,169 +1,854 @@
+
 <!DOCTYPE html>
 <html lang="ru">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <meta content="Петелька — уютный сайт о вязании: схемы, полезные инструменты и вдохновение." name="description"/>
-  <title>
-   О проекте — Петелька
-  </title>
-  <link href="css/style.css" rel="stylesheet"/>
-  <script defer="" src="js/main.js">
-  </script>
- </head>
- <body>
-  <header class="site-header">
-   <div class="container site-header__inner">
-    <a class="site-header__brand" href="index.html">
-     <img alt="Клубок со спицами" class="site-header__logo-img" src="images/logo.svg"/>
-     <span>
-      Петелька
-     </span>
-    </a>
-    <nav aria-label="Основная навигация" class="site-header__nav">
-     <a class="site-header__link" href="index.html">
-      Главная
-     </a>
-     <a class="site-header__link" href="catalog.html">
-      Каталог
-     </a>
-     <a class="site-header__link" href="helper.html">
-      Помощник
-     </a>
-     <a class="site-header__link is-active" href="about.html">
-      О проекте
-     </a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>О проекте — Петелька</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .about-page {
+            background: #fffaf7;
+            color: #70515e;
+        }
+
+        /* Хлебные крошки */
+        .about-breadcrumbs {
+            padding: 18px 0;
+            background: #fff8f6;
+            border-bottom: 1px solid #ead5dc;
+        }
+
+        .about-breadcrumbs ol {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-size: 14px;
+        }
+
+        .about-breadcrumbs a {
+            color: #a06c80;
+            text-decoration: none;
+        }
+
+        .about-breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+
+        .about-breadcrumbs .current {
+            color: #70515e;
+            font-weight: 600;
+        }
+
+        /* Общие разделы */
+        .about-section {
+            padding: 95px 0;
+        }
+
+        .about-section--pink {
+            background: #f8ecee;
+        }
+
+        .about-section--cream {
+            background: #fffaf7;
+        }
+
+        .about-label {
+            display: inline-block;
+            margin-bottom: 18px;
+            color: #b7788e;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .about-title {
+            margin-bottom: 28px;
+            color: #70515e;
+            font-size: clamp(32px, 4vw, 52px);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .about-subtitle {
+            margin-bottom: 25px;
+            color: #70515e;
+            font-size: clamp(28px, 3vw, 39px);
+            font-weight: 700;
+            line-height: 1.25;
+        }
+
+        .about-text {
+            max-width: 680px;
+            color: #735f67;
+            font-size: 17px;
+            line-height: 1.9;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .about-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Фотографии */
+        .about-image {
+            width: 100%;
+            height: 460px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(112, 81, 94, 0.1);
+        }
+
+        .about-image--small {
+            height: 400px;
+        }
+
+        /* Карточки */
+        .about-cards {
+            margin-top: 55px;
+        }
+
+        .about-card {
+            height: 100%;
+            padding: 30px;
+            background: #ffffff;
+            border: 1px solid #ead5dc;
+            border-radius: 20px;
+            transition: transform 0.2s ease;
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .about-card i {
+            display: block;
+            margin-bottom: 20px;
+            color: #b7788e;
+            font-size: 35px;
+        }
+
+        .about-card h3 {
+            margin-bottom: 15px;
+            color: #70515e;
+            font-size: 21px;
+            font-weight: 600;
+        }
+
+        .about-card p {
+            margin: 0;
+            color: #806c74;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        /* Возможности сайта */
+        .about-feature {
+            display: flex;
+            gap: 18px;
+            margin-bottom: 28px;
+        }
+
+        .about-feature__icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 55px;
+            width: 55px;
+            height: 55px;
+            background: #f5e3e8;
+            border-radius: 15px;
+            color: #a56c80;
+            font-size: 25px;
+        }
+
+        .about-feature h3 {
+            margin-bottom: 8px;
+            color: #70515e;
+            font-size: 20px;
+        }
+
+        .about-feature p {
+            margin: 0;
+            color: #806c74;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* Автор */
+        .about-author {
+            margin-top: 45px;
+            padding: 30px;
+            background: #ffffff;
+            border: 1px solid #ead5dc;
+            border-radius: 20px;
+        }
+
+        .about-author h3 {
+            margin-bottom: 15px;
+            color: #70515e;
+            font-size: 22px;
+        }
+
+        .about-author p {
+            margin: 0;
+            color: #735f67;
+            line-height: 1.8;
+        }
+
+        /* Ссылки */
+        .about-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 25px;
+            padding: 13px 25px;
+            background: #b7788e;
+            border-radius: 12px;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+
+        .about-link:hover {
+            background: #985d73;
+            color: white;
+        }
+
+        /* Контакты */
+        .about-contacts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+            margin-top: 25px;
+        }
+
+        .about-contacts a {
+            color: #a06c80;
+            text-decoration: none;
+        }
+
+        .about-contacts a:hover {
+            text-decoration: underline;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 991px) {
+            .about-section {
+                padding: 65px 0;
+            }
+
+            .about-image {
+                height: 350px;
+            }
+
+            .about-image--small {
+                height: 320px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .about-section {
+                padding: 50px 0;
+            }
+
+            .about-text {
+                font-size: 16px;
+            }
+
+            .about-image {
+                height: 270px;
+            }
+
+            .about-card {
+                padding: 25px;
+            }
+
+            .about-author {
+                padding: 23px;
+            }
+        }
+    </style>
+
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+
+    <!-- ШАПКА САЙТА -->
+    <header class="site-header">
+        <div class="container site-header__inner">
+
+            <a class="site-header__brand" href="index.html">
+                <img
+                    class="site-header__logo-img"
+                    src="images/logo.svg"
+                    alt="Логотип Петелька"
+                >
+                <span>Петелька</span>
+            </a>
+
+            <nav
+                class="site-header__nav"
+                aria-label="Основная навигация"
+            >
+                <a class="site-header__link" href="index.html">
+                    Главная
+                </a>
+
+                <a class="site-header__link" href="catalog.html">
+                    Каталог
+                </a>
+
+                <a class="site-header__link" href="helper.html">
+                    Помощник
+                </a>
+
+                <a
+                    class="site-header__link is-active"
+                    href="about.html"
+                    aria-current="page"
+                >
+                    О проекте
+                </a>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- ХЛЕБНЫЕ КРОШКИ -->
+    <nav class="about-breadcrumbs" aria-label="Хлебные крошки">
+        <div class="container">
+            <ol>
+                <li>
+                    <a href="index.html">Главная</a>
+                </li>
+
+                <li aria-hidden="true">/</li>
+
+                <li class="current" aria-current="page">
+                    О проекте
+                </li>
+            </ol>
+        </div>
     </nav>
-   </div>
-  </header>
-  <main>
-   <section class="page-banner">
+
+    <main class="about-page">
+
+        <!-- РАЗДЕЛ 1. ЗНАКОМСТВО -->
+        <section class="about-section about-section--cream">
+
+            <div class="container">
+
+                <div class="row align-items-center g-5">
+
+                    <div class="col-lg-7">
+
+                        <span class="about-label">
+                            Добро пожаловать
+                        </span>
+
+                        <h1 class="about-title">
+                            «Петелька» — место,
+                            где рождается уют
+                        </h1>
+
+                        <div class="about-text">
+
+                            <p>
+                                Вязание — это особенный вид
+                                творчества, в котором из обычной
+                                нити постепенно появляется
+                                что-то красивое и полезное.
+                                Каждая петля становится частью
+                                будущего изделия, а каждая
+                                законченная работа приносит
+                                радость и чувство гордости.
+                            </p>
+
+                            <p>
+                                «Петелька» — небольшой проект
+                                для тех, кто любит вязать,
+                                только начинает знакомиться
+                                с этим увлечением или ищет
+                                вдохновение для новых работ.
+                            </p>
+
+                            <p>
+                                Здесь собраны идеи вязаных
+                                изделий, полезные инструменты
+                                и рекомендации, которые помогают
+                                сделать процесс вязания
+                                более удобным и интересным.
+                            </p>
+
+                            <p>
+                                Мне хотелось создать сайт
+                                с тёплой и спокойной атмосферой,
+                                куда приятно возвращаться
+                                за новой идеей или небольшим
+                                творческим вдохновением.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-5">
+
+                        <img
+                            class="about-image"
+                            src="https://images.unsplash.com/photo-1604881988758-f76ad2f7aac1?auto=format&fit=crop&w=1000&q=85"
+                            alt="Пряжа и принадлежности для вязания"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                </div>
+
+                <div class="row g-4 about-cards">
+
+                    <div class="col-md-4">
+                        <article class="about-card">
+                            
+<svg class="knitting-icon" viewBox="0 0 64 64"
+     fill="none" stroke="currentColor"
+     stroke-width="2.5" stroke-linecap="round"
+     stroke-linejoin="round" aria-hidden="true">
+    <circle cx="32" cy="34" r="23"/>
+    <path d="M16 18c10 3 23 12 31 29"/>
+    <path d="M11 31c13-1 29 6 38 16"/>
+    <path d="M20 15c-3 12 5 29 22 39"/>
+    <path d="M33 11c-6 13-4 28 10 43"/>
+    <path d="M15 48c9-12 24-19 39-17"/>
+    <path d="M26 56c3-10 14-19 29-20"/>
+    <path d="M32 57c7 2 12 4 16 7"/>
+</svg>
+
+
+                            <h3>Творчество</h3>
+
+                            <p>
+                                Вязание позволяет воплощать
+                                собственные идеи, выбирать
+                                цвета, узоры и создавать
+                                уникальные вещи.
+                            </p>
+                        </article>
+                    </div>
+
+                    <div class="col-md-4">
+                        <article class="about-card">
+                            
+<svg class="knitting-icon" viewBox="0 0 64 64"
+     fill="none" stroke="currentColor"
+     stroke-width="2.5" stroke-linecap="round"
+     stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 9L52 55"/>
+    <path d="M52 9L12 55"/>
+    <circle cx="10" cy="7" r="3"/>
+    <circle cx="54" cy="7" r="3"/>
+    <path d="M20 29c4-6 8-6 12 0s8 6 12 0"/>
+    <path d="M17 37c5-6 10-6 15 0s10 6 15 0"/>
+    <path d="M21 45c4-5 8-5 12 0s8 5 12 0"/>
+</svg>
+
+
+                            <h3>Уют</h3>
+
+                            <p>
+                                Мягкая пряжа, любимый узор
+                                и спокойный вечер превращают
+                                вязание в приятный способ
+                                провести свободное время.
+                            </p>
+                        </article>
+                    </div>
+
+                    <div class="col-md-4">
+                        <article class="about-card">
+                            
+<svg class="knitting-icon" viewBox="0 0 64 64"
+     fill="none" stroke="currentColor"
+     stroke-width="2.5" stroke-linecap="round"
+     stroke-linejoin="round" aria-hidden="true">
+    <path d="M22 10L10 17L3 34L15 40L20 29V55H44V29L49 40L61 34L54 17L42 10"/>
+    <path d="M22 10c1 7 5 11 10 11s9-4 10-11"/>
+    <path d="M20 48H44"/>
+    <path d="M15 35L8 32"/>
+    <path d="M49 35L56 32"/>
+    <path d="M27 29l5 5 5-5"/>
+    <path d="M27 38l5 5 5-5"/>
+</svg>
+
+
+                            <h3>Вдохновение</h3>
+
+                            <p>
+                                Каждое готовое изделие
+                                вдохновляет пробовать новые
+                                техники и постепенно
+                                совершенствовать мастерство.
+                            </p>
+                        </article>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- РАЗДЕЛ 2. О ВЯЗАНИИ -->
+        <section class="about-section about-section--pink">
+
+            <div class="container">
+
+                <div class="row align-items-center g-5">
+
+                    <div class="col-lg-5 order-2 order-lg-1">
+
+                        <img
+                            class="about-image about-image--small"
+                            src="https://images.unsplash.com/photo-1632649027900-389e810204e6?auto=format&fit=crop&w=1000&q=85"
+                            alt="Вязаное изделие ручной работы"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="col-lg-7 order-1 order-lg-2">
+
+                        <span class="about-label">
+                            Больше, чем хобби
+                        </span>
+
+                        <h2 class="about-subtitle">
+                            Почему вязание так увлекает?
+                        </h2>
+
+                        <div class="about-text">
+
+                            <p>
+                                Вязание сочетает в себе
+                                творчество, внимательность
+                                и практическую пользу.
+                                Оно позволяет ненадолго
+                                отвлечься от повседневных
+                                забот и сосредоточиться
+                                на спокойном, последовательном
+                                процессе.
+                            </p>
+
+                            <p>
+                                Начать можно с самых простых
+                                вещей: шарфа, повязки на голову
+                                или небольшого аксессуара.
+                                Постепенно появляются навыки,
+                                необходимые для более сложных
+                                изделий — шапок, кардиганов
+                                и свитеров.
+                            </p>
+
+                            <p>
+                                Особенно приятно, что результат
+                                вязания можно использовать
+                                в повседневной жизни
+                                или подарить близкому человеку.
+                                Вещи ручной работы всегда
+                                сохраняют частичку внимания
+                                и времени, вложенных
+                                в их создание.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- РАЗДЕЛ 3. ВОЗМОЖНОСТИ САЙТА -->
+        <section class="about-section about-section--cream">
+
+            <div class="container">
+
+                <div class="row g-5">
+
+                    <div class="col-lg-6">
+
+                        <span class="about-label">
+                            Что есть на сайте
+                        </span>
+
+                        <h2 class="about-subtitle">
+                            Всё для твоих вязаных проектов
+                        </h2>
+
+                        <div class="about-text">
+
+                            <p>
+                                «Петелька» создана, чтобы
+                                полезные материалы и инструменты
+                                для вязания находились
+                                в одном месте.
+                            </p>
+
+                            <p>
+                                Здесь можно выбрать идею
+                                для следующего изделия,
+                                ознакомиться с описанием
+                                и воспользоваться помощником
+                                для расчётов во время работы.
+                            </p>
+
+                        </div>
+
+                        <a class="about-link" href="catalog.html">
+                            Перейти в каталог
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                    <div class="col-lg-6">
+
+                        <div class="about-feature">
+                            <div class="about-feature__icon">
+                                <i class="bi bi-grid"></i>
+                            </div>
+
+                            <div>
+                                <h3>Каталог изделий</h3>
+                                <p>
+                                    Шарфы, шапки, свитеры,
+                                    аксессуары и другие идеи
+                                    для вязания.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="about-feature">
+                            <div class="about-feature__icon">
+                                <i class="bi bi-funnel"></i>
+                            </div>
+
+                            <div>
+                                <h3>Поиск и фильтры</h3>
+                                <p>
+                                    Удобный выбор изделий
+                                    по категории и уровню
+                                    сложности.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="about-feature">
+                            <div class="about-feature__icon">
+                                <i class="bi bi-calculator"></i>
+                            </div>
+
+                            <div>
+                                <h3>Помощник вязальщицы</h3>
+                                <p>
+                                    Счётчик рядов и калькулятор
+                                    петель для более удобной
+                                    работы над изделием.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="about-feature">
+                            <div class="about-feature__icon">
+                                <i class="bi bi-lightbulb"></i>
+                            </div>
+
+                            <div>
+                                <h3>Советы начинающим</h3>
+                                <p>
+                                    Простые рекомендации
+                                    по выбору материалов,
+                                    первым петлям
+                                    и распространённым ошибкам.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- НЕМНОГО ОБ АВТОРЕ -->
+                <div class="about-author">
+
+                    <h3>Немного обо мне</h3>
+
+                    <p>
+                        Привет! Меня зовут Лиза.
+                        Я учусь в
+                        РТУ МИРЭА по направлению
+                        «Информационные системы
+                        и технологии».
+
+                        Помимо программирования,
+                        я увлекаюсь вязанием.
+                        Мне захотелось объединить
+                        эти два интереса и создать
+                        сайт, который будет полезен
+                        всем, кто любит создавать
+                        вещи своими руками.
+                    </p>
+
+                    <div class="about-contacts">
+
+                        <a
+                            href="https://t.me/velliez"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i class="bi bi-telegram"></i>
+                            Telegram: @velliez
+                        </a>
+
+                        <a href="mailto:elizavetavizitiu@gmail.com">
+                            <i class="bi bi-envelope"></i>
+                            Написать на почту
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ПОДВАЛ -->
+    
+<footer class="site-footer">
     <div class="container">
-     <span class="eyebrow">
-      Немного о нас
-     </span>
-     <h1>
-      О проекте
-     </h1>
-     <p>
-      «Петелька» — маленькое пространство для большого творчества.
-     </p>
+
+        <div class="site-footer__grid">
+
+            <!-- ЛЕВАЯ КОЛОНКА -->
+            <div class="site-footer__about">
+                <a class="site-footer__wordmark" href="index.html">
+                    Петелька
+                </a>
+
+                <p>
+                    Вяжем с теплом и вдохновением.
+                </p>
+            </div>
+
+            
+<!-- НАВИГАЦИЯ ПО ЦЕНТРУ -->
+<nav class="site-footer__navigation"
+     aria-label="Навигация в подвале">
+
+    <h3>Навигация</h3>
+
+    <div class="site-footer__nav-grid">
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="helper.html">Помощник</a>
+        <a href="about.html">О проекте</a>
     </div>
-   </section>
-   <section class="section container about-layout">
-    <div>
-     <span class="eyebrow">
-      Сделано с любовью к рукоделию
-     </span>
-     <h2>
-      Каждая петля — часть истории
-     </h2>
-     <p>
-      «Петелька» — учебный веб-проект для тех, кто любит вязание и хочет находить новые идеи в одном месте. Здесь собраны простые проекты, вдохновение и инструменты, которые помогают не отвлекаться от творчества.
-     </p>
-     <p>
-      Наша цель — сделать знакомство с вязанием понятнее и приятнее: выбрать изделие, оценить сложность, открыть описание и воспользоваться удобным счётчиком рядов.
-     </p>
-     <a class="button" href="catalog.html">
-      Выбрать проект 
-     </a>
+
+</nav>
+
+
+            <!-- КОНТАКТЫ СПРАВА -->
+            <div class="site-footer__contacts">
+
+                <h3>Контакты</h3>
+
+                <!-- Почта -->
+                <a href="mailto:elizavetavizitiu@gmail.com">
+                    <i class="bi bi-envelope-fill"></i>
+                    elizavetavizitiu@gmail.com
+                </a>
+
+                <!-- Telegram -->
+                <a href="https://t.me/velliez"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <i class="bi bi-telegram"></i>
+                    @velliez
+                </a>
+
+                <!-- ВКонтакте -->
+                
+
+
+<a href="https://vk.com/zvtizz"
+   target="_blank"
+   rel="noopener noreferrer">
+    <svg xmlns="http://www.w3.org/2000/svg"
+         width="19"
+         height="19"
+         viewBox="0 0 24 24"
+         fill="currentColor"
+         aria-hidden="true"
+         style="flex-shrink: 0;">
+        <path d="M15.073 2H8.937C3.33 2 2 3.33 2 8.927v6.146C2 20.67 3.33 22 8.927 22h6.146C20.67 22 22 20.67 22 15.073V8.937C22 3.33 20.67 2 15.073 2zm3.073 14.27h-1.45c-.55 0-.72-.44-1.71-1.43-.87-.84-1.25-.95-1.46-.95-.3 0-.39.08-.39.5v1.31c0 .36-.12.57-1.06.57-1.57 0-3.31-.95-4.54-2.72-1.85-2.6-2.36-4.55-2.36-4.95 0-.22.08-.42.5-.42h1.45c.37 0 .51.16.65.55.72 2.08 1.93 3.9 2.43 3.9.19 0 .28-.09.28-.59V9.72c-.06-1.07-.63-1.16-.63-1.54 0-.18.15-.36.38-.36h2.28c.31 0 .42.17.42.53v3.08c0 .33.14.45.23.45.19 0 .35-.12.7-.47 1.08-1.21 1.85-3.07 1.85-3.07.1-.22.27-.42.64-.42h1.45c.44 0 .54.22.44.52-.19.88-2.03 3.48-2.03 3.48-.16.26-.22.38 0 .67.16.22.69.68 1.04 1.09.64.73 1.13 1.35 1.26 1.78.13.42-.08.64-.51.64z"/>
+    </svg>
+    @zvtizz
+</a>
+
+
+
+
+            </div>
+
+        </div>
+
+        <!-- НИЖНЯЯ СТРОКА -->
+        <div class="site-footer__bottom">
+            © 2026 Петелька. Все права защищены.
+        </div>
+
     </div>
-    <div class="about-illustration">
-     <img alt="Клубок пряжи и спицы" src="images/yarn.svg"/>
-    </div>
-   </section>
-   <section class="section section--tinted">
-    <div class="container">
-     <div class="section__heading">
-      <span class="eyebrow">
-       Что есть на сайте
-      </span>
-      <h2>
-       Всё для первых шагов
-      </h2>
-     </div>
-     <div class="features">
-      <article>
-       <span class="feature-icon">
-        01
-       </span>
-       <h3>
-        9 проектов
-       </h3>
-       <p>
-        Идеи для одежды, аксессуаров и головных уборов.
-       </p>
-      </article>
-      <article>
-       <span class="feature-icon">
-        02
-       </span>
-       <h3>
-        Фильтры
-       </h3>
-       <p>
-        Удобный поиск по названию, категории и сложности.
-       </p>
-      </article>
-      <article>
-       <span class="feature-icon">
-        03
-       </span>
-       <h3>
-        Инструменты
-       </h3>
-       <p>
-        Счётчик рядов и калькулятор петель на отдельной странице.
-       </p>
-      </article>
-     </div>
-    </div>
-   </section>
-   <section class="section container about-bottom">
-    <h2>
-     Давай творить вместе!
-    </h2>
-    <p>
-     Начни с простого проекта — и пусть каждая новая петля приносит радость.
-    </p>
-    <a class="button" href="catalog.html">
-     Перейти в каталог 
-    </a>
-   </section>
-  </main>
-  <footer class="site-footer">
-   <div class="container site-footer__inner">
-    <div>
-     <a class="site-footer__wordmark" href="index.html">
-      Петелька
-     </a>
-     <p>
-      Вяжем с теплом и вдохновением.
-     </p>
-    </div>
-    <div class="site-footer__links">
-     <a href="index.html">
-      Главная
-     </a>
-     <a href="catalog.html">
-      Каталог
-     </a>
-     <a href="helper.html">
-      Помощник
-     </a>
-     <a href="about.html">
-      О проекте
-     </a>
-    </div>
-    <div class="site-footer__copyright">
-     © 2026 Петелька
-     <br/>
-     Все права защищены
-    </div>
-   </div>
-  </footer>
-  <button aria-label="Вернуться наверх" class="to-top" id="toTop" type="button">
-   ⌃
-  </button>
- </body>
+</footer>
+
+
+    <!-- КНОПКА НАВЕРХ -->
+    <button
+        class="to-top"
+        id="toTop"
+        type="button"
+        aria-label="Вернуться наверх"
+    >
+        ⌃
+    </button>
+
+</body>
 </html>

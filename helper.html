@@ -4,6 +4,11 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="Петелька — уютный сайт о вязании: схемы, полезные инструменты и вдохновение." name="description"/>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <title>
    Помощник — Петелька
   </title>
@@ -36,6 +41,19 @@
     </nav>
    </div>
   </header>
+
+<nav class="breadcrumbs" aria-label="Хлебные крошки">
+    <div class="container">
+        <ol class="breadcrumbs__list">
+            <li><a href="index.html">Главная</a></li>
+            <li class="breadcrumbs__separator">/</li>
+            <li class="breadcrumbs__current" aria-current="page">
+                Помощник
+            </li>
+        </ol>
+    </div>
+</nav>
+
   <main>
    <section class="page-banner">
     <div class="container">
@@ -121,38 +139,161 @@
      </section>
     </div>
    </section>
+
+<section class="section container beginner-tips">
+    <div class="section-heading">
+        <span class="eyebrow">Полезно знать</span>
+        <h2>Советы начинающим</h2>
+        <p>
+            Несколько рекомендаций, которые помогут
+            сделать первые шаги в вязании.
+        </p>
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-md-6">
+            <article class="beginner-tip">
+                <i class="bi bi-book"></i>
+                <h3>Начинай с простого</h3>
+                <p>
+                    Для первого проекта лучше выбрать шарф,
+                    повязку или небольшой образец.
+                    Сначала освой набор петель, лицевые
+                    и изнаночные петли, а затем переходи
+                    к более сложным узорам.
+                </p>
+            </article>
+        </div>
+
+        <div class="col-md-6">
+            <article class="beginner-tip">
+                <i class="bi bi-rulers"></i>
+                <h3>Подбирай спицы под пряжу</h3>
+                <p>
+                    На этикетке пряжи обычно указан
+                    рекомендуемый размер спиц.
+                    Для обучения удобнее использовать
+                    светлую гладкую пряжу средней толщины:
+                    на ней хорошо видны петли.
+                </p>
+            </article>
+        </div>
+
+        <div class="col-md-6">
+            <article class="beginner-tip">
+                <i class="bi bi-calculator"></i>
+                <h3>Не забывай про образец</h3>
+                <p>
+                    Перед вязанием изделия свяжи небольшой
+                    образец, обработай его так же, как
+                    готовую вещь, и измерь плотность.
+                    Это поможет правильно рассчитать
+                    количество петель.
+                </p>
+            </article>
+        </div>
+
+        <div class="col-md-6">
+            <article class="beginner-tip">
+                <i class="bi bi-lightbulb"></i>
+                <h3>Не бойся ошибок</h3>
+                <p>
+                    Неровные петли и распущенные ряды —
+                    нормальная часть обучения.
+                    Старайся не затягивать рабочую нить
+                    слишком сильно и периодически
+                    проверяй количество петель.
+                </p>
+            </article>
+        </div>
+
+    </div>
+</section>
+
   </main>
-  <footer class="site-footer">
-   <div class="container site-footer__inner">
-    <div>
-     <a class="site-footer__wordmark" href="index.html">
-      Петелька
-     </a>
-     <p>
-      Вяжем с теплом и вдохновением.
-     </p>
+  
+<footer class="site-footer">
+    <div class="container">
+
+        <div class="site-footer__grid">
+
+            <!-- ЛЕВАЯ КОЛОНКА -->
+            <div class="site-footer__about">
+                <a class="site-footer__wordmark" href="index.html">
+                    Петелька
+                </a>
+
+                <p>
+                    Вяжем с теплом и вдохновением.
+                </p>
+            </div>
+
+            
+<!-- НАВИГАЦИЯ ПО ЦЕНТРУ -->
+<nav class="site-footer__navigation"
+     aria-label="Навигация в подвале">
+
+    <h3>Навигация</h3>
+
+    <div class="site-footer__nav-grid">
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="helper.html">Помощник</a>
+        <a href="about.html">О проекте</a>
     </div>
-    <div class="site-footer__links">
-     <a href="index.html">
-      Главная
-     </a>
-     <a href="catalog.html">
-      Каталог
-     </a>
-     <a href="helper.html">
-      Помощник
-     </a>
-     <a href="about.html">
-      О проекте
-     </a>
+
+</nav>
+
+
+            <!-- КОНТАКТЫ СПРАВА -->
+            <div class="site-footer__contacts">
+
+                <h3>Контакты</h3>
+
+                <!-- Почта -->
+                <a href="mailto:elizavetavizitiu@gmail.com">
+                    <i class="bi bi-envelope-fill"></i>
+                    elizavetavizitiu@gmail.com
+                </a>
+
+                <!-- Telegram -->
+                <a href="https://t.me/velliez"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <i class="bi bi-telegram"></i>
+                    @velliez
+                </a>
+
+               
+<a href="https://vk.com/zvtizz"
+   target="_blank"
+   rel="noopener noreferrer">
+    <svg xmlns="http://www.w3.org/2000/svg"
+         width="19"
+         height="19"
+         viewBox="0 0 24 24"
+         fill="currentColor"
+         aria-hidden="true"
+         style="flex-shrink: 0;">
+        <path d="M15.073 2H8.937C3.33 2 2 3.33 2 8.927v6.146C2 20.67 3.33 22 8.927 22h6.146C20.67 22 22 20.67 22 15.073V8.937C22 3.33 20.67 2 15.073 2zm3.073 14.27h-1.45c-.55 0-.72-.44-1.71-1.43-.87-.84-1.25-.95-1.46-.95-.3 0-.39.08-.39.5v1.31c0 .36-.12.57-1.06.57-1.57 0-3.31-.95-4.54-2.72-1.85-2.6-2.36-4.55-2.36-4.95 0-.22.08-.42.5-.42h1.45c.37 0 .51.16.65.55.72 2.08 1.93 3.9 2.43 3.9.19 0 .28-.09.28-.59V9.72c-.06-1.07-.63-1.16-.63-1.54 0-.18.15-.36.38-.36h2.28c.31 0 .42.17.42.53v3.08c0 .33.14.45.23.45.19 0 .35-.12.7-.47 1.08-1.21 1.85-3.07 1.85-3.07.1-.22.27-.42.64-.42h1.45c.44 0 .54.22.44.52-.19.88-2.03 3.48-2.03 3.48-.16.26-.22.38 0 .67.16.22.69.68 1.04 1.09.64.73 1.13 1.35 1.26 1.78.13.42-.08.64-.51.64z"/>
+    </svg>
+    @zvtizz
+</a>
+
+
+            </div>
+
+        </div>
+
+        <!-- НИЖНЯЯ СТРОКА -->
+        <div class="site-footer__bottom">
+            © 2026 Петелька. Все права защищены.
+        </div>
+
     </div>
-    <div class="site-footer__copyright">
-     © 2026 Петелька
-     <br/>
-     Все права защищены
-    </div>
-   </div>
-  </footer>
+</footer>
+
   <button aria-label="Вернуться наверх" class="to-top" id="toTop" type="button">
    ⌃
   </button>

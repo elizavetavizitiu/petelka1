@@ -4,6 +4,11 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="Петелька - уютный сайт о вязании: схемы, полезные инструменты и вдохновение." name="description"/>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <title>
    Главная — Петелька
   </title>
@@ -78,7 +83,8 @@
     </div>
     <div class="cards">
      <article class="product-card">
-      <img alt="Шарф «Тёплый вечер»" loading="lazy" src="images/scarf.svg"/>
+      <img src="https://i.pinimg.com/736x/09/65/2b/09652b4a549f64d37186a0dfbe4d0c9b.jpg" alt="Шарф Тёплый вечер"
+                            >
       <div class="product-card__content">
        <span class="eyebrow">
         Начальный
@@ -95,7 +101,10 @@
       </div>
      </article>
      <article class="product-card">
-      <img alt="Шапка «Облако»" loading="lazy" src="images/hat.svg"/>
+      <img
+                                src="https://cs5.livemaster.ru/storage/21/80/277b999f68014f52a3564690777j--aksessuary-vyazanaya-shapka-s-otvorotom-kosichka.jpg"
+                                alt="Шапка Облако"
+                            >
       <div class="product-card__content">
        <span class="eyebrow">
         Средний
@@ -112,7 +121,10 @@
       </div>
      </article>
      <article class="product-card">
-      <img alt="Свитер «Нежность»" loading="lazy" src="images/sweater.svg"/>
+     <img
+                                src="https://cs2.livemaster.ru/storage/d9/90/63cb29f9cf306566a83afc92ac0q--odezhda-vyazanyj-sviter-iz-peruanskoj-shersti.jpg"
+                                alt="Свитер Нежность"
+                            >
       <div class="product-card__content">
        <span class="eyebrow">
         Продвинутый
@@ -146,6 +158,7 @@
      </div>
      <div class="features">
       <article>
+        <i class="bi bi-journal-text home-feature-icon" aria-hidden="true"></i>
        <h3>
         Понятные описания
        </h3>
@@ -154,6 +167,7 @@
        </p>
       </article>
       <article>
+        <i class="bi bi-123 home-feature-icon" aria-hidden="true"></i>
        <h3>
         Удобный счётчик
        </h3>
@@ -162,6 +176,7 @@
        </p>
       </article>
       <article>
+        <i class="bi bi-calculator home-feature-icon" aria-hidden="true"></i>
        <h3>
         Расчёт петель
        </h3>
@@ -178,37 +193,90 @@
     </div>
    </section>
   </main>
-  <footer class="site-footer">
-   <div class="container site-footer__inner">
-    <div>
-     <a class="site-footer__wordmark" href="index.html">
-      Петелька
-     </a>
-     <p>
-      Вяжем с теплом и вдохновением.
-     </p>
+  
+
+<footer class="site-footer">
+    <div class="container">
+
+        <div class="site-footer__grid">
+
+            <!-- ЛЕВАЯ КОЛОНКА -->
+            <div class="site-footer__about">
+                <a class="site-footer__wordmark" href="index.html">
+                    Петелька
+                </a>
+
+                <p>
+                    Вяжем с теплом и вдохновением.
+                </p>
+            </div>
+
+           
+<!-- НАВИГАЦИЯ ПО ЦЕНТРУ -->
+<nav class="site-footer__navigation"
+     aria-label="Навигация в подвале">
+
+    <h3>Навигация</h3>
+
+    <div class="site-footer__nav-grid">
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="helper.html">Помощник</a>
+        <a href="about.html">О проекте</a>
     </div>
-    <div class="site-footer__links">
-     <a href="index.html">
-      Главная
-     </a>
-     <a href="catalog.html">
-      Каталог
-     </a>
-     <a href="helper.html">
-      Помощник
-     </a>
-     <a href="about.html">
-      О проекте
-     </a>
+
+</nav>
+
+
+            <!-- КОНТАКТЫ СПРАВА -->
+            <div class="site-footer__contacts">
+
+                <h3>Контакты</h3>
+
+                <!-- Почта -->
+                <a href="mailto:elizavetavizitiu@gmail.com">
+                    <i class="bi bi-envelope-fill"></i>
+                    elizavetavizitiu@gmail.com
+                </a>
+
+                <!-- Telegram -->
+                <a href="https://t.me/velliez"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <i class="bi bi-telegram"></i>
+                    @velliez
+                </a>
+
+                <!-- ВКонтакте -->
+                
+<a href="https://vk.com/zvtizz"
+   target="_blank"
+   rel="noopener noreferrer">
+    <svg xmlns="http://www.w3.org/2000/svg"
+         width="19"
+         height="19"
+         viewBox="0 0 24 24"
+         fill="currentColor"
+         aria-hidden="true"
+         style="flex-shrink: 0;">
+        <path d="M15.073 2H8.937C3.33 2 2 3.33 2 8.927v6.146C2 20.67 3.33 22 8.927 22h6.146C20.67 22 22 20.67 22 15.073V8.937C22 3.33 20.67 2 15.073 2zm3.073 14.27h-1.45c-.55 0-.72-.44-1.71-1.43-.87-.84-1.25-.95-1.46-.95-.3 0-.39.08-.39.5v1.31c0 .36-.12.57-1.06.57-1.57 0-3.31-.95-4.54-2.72-1.85-2.6-2.36-4.55-2.36-4.95 0-.22.08-.42.5-.42h1.45c.37 0 .51.16.65.55.72 2.08 1.93 3.9 2.43 3.9.19 0 .28-.09.28-.59V9.72c-.06-1.07-.63-1.16-.63-1.54 0-.18.15-.36.38-.36h2.28c.31 0 .42.17.42.53v3.08c0 .33.14.45.23.45.19 0 .35-.12.7-.47 1.08-1.21 1.85-3.07 1.85-3.07.1-.22.27-.42.64-.42h1.45c.44 0 .54.22.44.52-.19.88-2.03 3.48-2.03 3.48-.16.26-.22.38 0 .67.16.22.69.68 1.04 1.09.64.73 1.13 1.35 1.26 1.78.13.42-.08.64-.51.64z"/>
+    </svg>
+    @zvtizz
+</a>
+
+
+            </div>
+
+        </div>
+
+        <!-- НИЖНЯЯ СТРОКА -->
+        <div class="site-footer__bottom">
+            © 2026 Петелька. Все права защищены.
+        </div>
+
     </div>
-    <div class="site-footer__copyright">
-     © 2026 Петелька
-     <br/>
-     Все права защищены
-    </div>
-   </div>
-  </footer>
+</footer>
+
   <button aria-label="Вернуться наверх" class="to-top" id="toTop" type="button">
    ⌃
   </button>
